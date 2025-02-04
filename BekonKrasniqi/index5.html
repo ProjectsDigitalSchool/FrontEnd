@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Login and Registration Form</title>
+    <link rel="stylesheet" href="style5.css">
+    <script defer src="script5.js"></script>
+</head>
+<body>
+
+    <nav>
+        <div class="container nav_container">
+            <a href="index.html">
+                <h4>Swift Transfer</h4>
+            </a>
+            <ul class="nav_menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="index5.html">Login</a></li>
+                <li><a href="contact.html">Contact</a></li>
+               
+            </ul>
+            <button id="open-menu-btn"> <i class="uil uil-bars"></i></button>
+            <button id="close-menu-btn"> <i class="uil uil-multiply"></i></button>
+        </div>
+      
+    </nav>
+    <div class="parent-div">
+        <div class="vertical-section-holder">
+            <section class="vertical-section-1">
+                <!-- Your background content here if needed -->
+            </section>
+            <section class="vertical-section-2">
+                <div class="login-container">
+                    <div class="forms">
+                        <form class="login-form">
+                            <h2 class="heading-text">Login</h2>
+                            <input type="text" placeholder="Username" />
+                            <input type="password" placeholder="Password" />
+                            <button type="submit" onclick="pressLogIn()">Login</button>
+                            <p class="message1">Not registered? <a href="#" class="toggle-form">Signup</a></p>
+                        </form>
+                    </div>
+                </div>
+                <div class="signup-container">
+                    <div class="forms">
+                        <form class="register-form" id="register-form">
+                            <h2 class="heading-text">Sign Up</h2>
+                            <input type="text" id="fname" placeholder="First Name" required />
+                            <input type="text" id="lname" placeholder="Last Name" required />
+                            
+                            <input type="email" id="email" placeholder="Email" required />
+                            <input onkeyup="trigger()" type="password" id="password" placeholder="Password" required />
+                            <div class="indicator"><span class="weak"></span> <span class="medium"></span> <span class="strong"></span></div>
+                            <div class="strength"></div>
+                            <input type="password" id="cpassword" placeholder="Confirm Password" required />
+                            <button type="submit" onclick="pressSignUp()">Signup</button>
+                            <p class="message2">Already registered? <a href="#" class="toggle-form">Login</a></p>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+<script src="jquery-3.7.1 (1).js">
+</script>
+</body>
+</html>
