@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <!-- i will provide this in description  -->
+    <link rel="stylesheet" href="../css/slick.css" />
+    <link rel="stylesheet" href="../css/slick-theme.css" />
+    <link rel="stylesheet" href="../css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="../css/animate.min.css" />
+    <link rel="stylesheet" href="../css/magnific-popup.css" />
+    <link rel="stylesheet" href="../css/select2.min.css" />
+    <link rel="stylesheet" href="../css/select2-bootstrap4.min.css" />
+
+    <link rel="icon" type="x-icon" href="../images/archery.jpg">
+  
+    <link rel="stylesheet" href="../css/slick-animation.css" />
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+
+
+<header id="main-header">
+    <div class="main-header">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-12">
+            <nav class="navbar navbar-expand-lg navbar-light p-0">
+              <a href="#" class="navbar-toggler c-toggler" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="navbar-toggler-icon" data-toggle="collapse">
+                  <span class="navbar-menu-icon navbar-menu-icon--top"></span>
+                  <span class="navbar-menu-icon navbar-menu-icon--middle"></span>
+                  <span class="navbar-menu-icon navbar-menu-icon--bottom"></span>
+                </div>
+              </a>
+              <a href="../index.html" class="navbar-brand">
+                <img src="../images/logo-removebg-preview.png" class="img-fluid logo" alt="" />
+              </a>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="menu-main-menu-container">
+                  <ul id="top-menu" class="navbar-nav ml-auto">
+                    <li class="menu-item"><a href="../index.html">Home</a></li>
+                    <li class="menu-item"><a href="../index.html #divsportisteteklubit">Sportistet</a></li>
+                    <li class="menu-item"><a href="../index.html #divvvidoes">Videot</a></li>
+                    <li class="menu-item"><a href="../Lajmet/lajmet.html">Lajmet</a></li>
+                    <li class="menu-item"><a href="../Gallery-KSHT/gallery.html">Fotot</a></li>
+                    <li class="menu-item"><a href="../KSHT-SHOP/index.html">Shop</a></li>
+                    <li class="menu-item">
+                      <a href="../Contact-Form/contact.html">Na Kontaktoni</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+           
+ 
+
+            
+  </header>
+
+
+<br><br><br><br><br><br>
+
+
+
+
+<body>
+     <section class="container">
+        <br><br><br><br><br>
+        <header>Order Form</header>
+  
+        <div class="form">
+            <div class="input-box">
+                <label>Emri Mbiemri</label>
+                <input id="name" type="text" placeholder="Emri Mbiemri" required/>
+            </div>
+        
+
+  
+            <div class="input-box">
+                <label>Email Adresa</label>
+                <input id="email" type="text" placeholder="Email Adresa" required/>
+            </div>
+
+            <div class="column">
+                <div class="input-box">
+                    <label>Numri Telefonit</label>
+                    <input id="phone" type="text" placeholder="Numri Telefonit" required/>
+                </div>
+
+                
+            </div>
+
+            <div class="gender-box">
+                <h3>Pagesa</h3>
+                <div class="gender-option">
+                    <div class="gender">
+                        <input type="radio" id="check-male" name="gender" checked>
+                        <label for="check-male">Cash</label>
+                    </div>
+                   
+                </div>
+            </div>
+
+            <div class="input-box address">
+                <label>Addresa</label>
+                <input id="address" type="text" placeholder="Adresa Juaj" required/>
+               
+
+                <div class="column">
+                    <div class="select-box">
+                        <select id="shteti">
+                            <option hidden>Shteti</option>
+                            <option>Kosova</option>
+                            <option>Shqiperia</option>
+                            <option>Mali i Zi</option>
+                            <option>Maqedoni</option>
+                        </select>
+                    </div>
+                </div>
+                <input id="qyteti" type="text" placeholder="Qyteti Ku Jetoni" required/>
+                <input id="regjioni" type="text" placeholder="Regjioni Juaj" required/>
+                <input id="kodipostal" type="text" placeholder="Kodi Postal" required/>
+
+               <input id="ShigjetTradicionale" value="Shigjet-Tradicionale" placeholder="Shigjet-Tradicionale" required/>
+
+               <div class="column">
+                <div class="select-box">
+                    <select id="ngjyra">
+                        <option hidden>Ngjyra</option>
+                        <option>Gjelbert</option>
+                    </select>
+                </div>
+            </div>
+            </div>
+
+          <button onclick="sendMailharkolimpik()">Blej Produktin</button>
+        </div>
+     </section>
+
+     <script type="text/javascript"
+     src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+ </script>
+ <script type="text/javascript">
+ (function(){
+   emailjs.init("gV4VuA3GKd6yCuDi9");
+ })();
+ </script>
+
+     <script>
+      function sendMailharkolimpik() {
+        var params = {
+          name: document.getElementById("name").value,
+          email: document.getElementById("email").value,
+          phone: document.getElementById("phone").value,
+          address: document.getElementById("address").value,
+          shteti: document.getElementById("shteti").value,
+          qyteti: document.getElementById("qyteti").value,
+          regjioni: document.getElementById("regjioni").value,
+          kodipostal: document.getElementById("kodipostal").value,
+          HarkOlimpik: document.getElementById("ShigjetTradicionale").value,
+          ngjyra: document.getElementById("ngjyra").value,
+        };
+      
+        const serviceID = "service_bzyffut";
+        const templateID = "template_y160yoq";
+      
+          emailjs.send(serviceID, templateID, params)
+          .then(res=>{
+              document.getElementById("name").value = "";
+              document.getElementById("phone").value = "";
+              document.getElementById("email").value = "";
+              document.getElementById("address").value = "";
+              document.getElementById("shteti").value = "";
+              document.getElementById("qyteti").value = "";
+              document.getElementById("regjioni").value = "";
+              document.getElementById("kodipostal").value = "";
+              document.getElementById("ShigjetTradicionale").value = "";
+              document.getElementById("ngjyra").value = "";
+              console.log(res);
+              alert("Porosia juaj eshte derguar me sukses mbrenda 1 jave do ta keni ne dore: Faleminderit!!!")
+      
+          })
+          .catch(err=>console.log(err));
+      
+      }
+     </script>
+
+
+     <br><br><br><br><br>
+
+
+     <footer class="iq-bg-dark">
+        <div class="footer-top">
+          <div class="container-fluid">
+            <div class="row footer-standard">
+              <div class="col-lg-5">
+                <div class="widget text-left">
+                  <div>
+                    <ul class="menu p-0">
+                      <li><a href="#">Terms of Use</a></li>
+                      <li><a href="#">Privacy-Policy</a></li>
+                      <li><a href="#">FAQ</a></li>
+                      <li><a href="#">Watch List</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="widget text-left">
+                  <div class="textwidget">
+                    <p><small></small></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
+                <h6 class="footer-link-title">
+                  Follow Us:
+                </h6>
+                <ul class="info-share">
+                  <li>
+                    <a href="https://www.facebook.com/KlubiSHT" target="_blank">
+                      <i>
+                      <fa class="fa fa-facebook"></fa>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.youtube.com/channel/UCgZoAf_L1cpNvcCpxvhZrig" target="_blank">
+                      <i>
+                      <fa class="fa fa-youtube"></fa>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.instagram.com/shigjetariatradicionale/" target="_blank">
+                      <i>
+                      <fa class="fa fa-instagram"></fa>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div id="divtest"></div>
+              <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
+                <div class="widget text-left">
+                  <div class="textwidget">
+                    <h6 class="footer-link-title">
+                      Shigjetaria Tradicionale
+                    </h6>
+                    <div class="d-flex align-items-center">
+                      <p>Numri Telefonit</p>
+                      <br>
+                      <p>+383 49 837 199</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="https://raes-portofolio.netlify.app/" target="_blank"> <p id="copyright">Copyright © 2023 Raes Zogaj. All rights reserved</p></a>
+      </footer>
+
+      <script>
+        function sweetAlert() {
+        Swal.fire(
+  'Sukses',
+  'Porosia juaj eshte perfunduar me sukses',
+  'success'
+)};
+    </script>
+
+
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/slick.min.js"></script>
+    <script src="../js/owl.carousel.min.js"></script>
+    <script src="../js/select2.min.js"></script>
+    <script src="../js/jquery.magnific-popup.min.js"></script>
+    <script src="../js/slick-animation.min.js"></script>
+  
+    <script src="../main.js"></script>
+
+</body>
+</html>
